@@ -34,7 +34,7 @@ public class App {
                     opcaoDesejada = readLine.nextInt();
 
                     System.out.println("Valor que deseja adicionar: ");
-                    valorMoeda = readLine.nextInt();
+                    valorMoeda = readLine.nextDouble();
 
                     switch (opcaoDesejada) {
                         case 1:
@@ -63,7 +63,7 @@ public class App {
                     opcaoDesejada = readLine.nextInt();
 
                     System.out.println("Valor que deseja remover: ");
-                    valorMoeda = readLine.nextInt();
+                    valorMoeda = readLine.nextDouble();
                     
                     switch (opcaoDesejada) {
                         case 1:
