@@ -64,21 +64,23 @@ public class App {
 
                     System.out.println("Valor que deseja remover: ");
                     valorMoeda = readLine.nextDouble();
-                    
+
+
                     switch (opcaoDesejada) {
                         case 1:
-                            meuCofrinho.remover(new Dolar(valorMoeda));
+                            meuCofrinho.remover(Dolar.class, valorMoeda);
                             break;
                         case 2:
-                            meuCofrinho.remover(new Euro(valorMoeda));
+                            meuCofrinho.remover(Euro.class, valorMoeda);
                             break;
                         case 3:
-                            meuCofrinho.remover(new Real(valorMoeda));
+                            meuCofrinho.remover(Real.class, valorMoeda);
                             break;
                         default:
                             System.out.println("Moeda ou valor invalido.");
                             break;                        
                     }
+                    
                     break;
                 case 3:
                     meuCofrinho.listagemMoedas();
@@ -93,6 +95,7 @@ public class App {
                     System.out.println("Opcao invalida.");
             }
         }
+        readLine.close();
         System.out.println("Até mais!");
     }
 }

@@ -8,9 +8,21 @@ public class Cofrinho extends Moeda {
         listaMoedas.add(moeda);
     }
 
-    public void remover(Moeda moeda) {
-        listaMoedas.remove(moeda);
+    // public void remover(Moeda moeda) {
+    //     listaMoedas.remove(moeda);
+    // }
+
+    public void remover(Class<? extends Moeda> tipoMoeda, double valorMoeda) {
+        for (int i = 0; i < listaMoedas.size(); i++) {
+            Moeda moedaAtual = listaMoedas.get(i);
+            if (moedaAtual.getClass().equals(tipoMoeda) && moedaAtual.getValor() == valorMoeda) {
+                listaMoedas.remove(i);
+                break;
+            }
+        }
     }
+
+
 
     public void listagemMoedas() {
         for (Moeda i : listaMoedas) {
@@ -26,9 +38,9 @@ public class Cofrinho extends Moeda {
                 totalEmReais+=i.converter();
             } else if (i instanceof Real) {
                 totalEmReais+= i.getValor();
-            }
-            System.out.println("O total em reais é de R$" + totalEmReais +".");
-            System.out.println();
+            }            
         }
+        System.out.println("O total em reais é de R$" + totalEmReais +".");
+        System.out.println();
     }
 }
